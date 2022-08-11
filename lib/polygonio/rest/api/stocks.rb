@@ -105,7 +105,7 @@ module Polygonio
       def last_trade(symbol)
         symbol = Types::String[symbol]
 
-        res = client.request.get("/v1/last/stocks/#{symbol}")
+        res = client.request.get("/v2/last/trade/#{symbol}")
         LastTradeResponse[res.body]
       end
 
@@ -126,7 +126,7 @@ module Polygonio
       def last_quote(symbol)
         symbol = Types::String[symbol]
 
-        res = client.request.get("/v1/last_quote/stocks/#{symbol}")
+        res = client.request.get("/v2/last/nbbo/#{symbol}")
         LastQuoteResponse[res.body]
       end
 
